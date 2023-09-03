@@ -13,7 +13,18 @@ let conditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
-
+function checkWin(){
+    for(let condition of winConditions){
+        const [a, b, c] = condition;
+        if(cells[a] && cells[a] === cells[b] && cells[b] === cells[c]){
+            return cells[a];
+        }
+        if(!cells.includes('')){
+            return draw;
+        }
+        return null;
+    }
+}
 // Function to handle player moves
 const ticTacToe = (element, index) => {
     // Your game logic here
