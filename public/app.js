@@ -25,6 +25,20 @@ function checkWin(){
         return null;
     }
 }
+
+function handleMove(element, index){
+    if(cells[index] || checkWin()){
+        return;
+    }
+    cells[index] = currentPlayer;
+    element.value = currentPlayer;
+    element.disabled = true;
+    currentPlayer = currentPlayer === 'X'?'O':'X';
+    const winner = checkWin();
+    if(winner === "draw"){
+        result.innerHTML = "It\'s"
+    }
+}
 // Function to handle player moves
 const ticTacToe = (element, index) => {
     // Your game logic here
