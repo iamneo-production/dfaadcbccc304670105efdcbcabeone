@@ -46,7 +46,13 @@ function handleMove(element, index){
 }
 
 function resetGame(){
-    cells = [",",",",",",","]
+    cells = ['','','','','','','','',''];
+    btns.forEach((btn) => {
+        btn.value = '';
+        btn.disabled = false;
+    });
+    currentPlayer = 'X';
+    result.innerHTML = 'Player X Turn';
 }
 // Function to handle player moves
 const ticTacToe = (element, index) => {
