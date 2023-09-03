@@ -36,8 +36,17 @@ function handleMove(element, index){
     currentPlayer = currentPlayer === 'X'?'O':'X';
     const winner = checkWin();
     if(winner === "draw"){
-        result.innerHTML = "It\'s"
+        result.innerHTML = "It\'s a draw!";
+    }else if(winner){
+        result.innerHTML = `Player ${winner} Won`;
+        btns.forEach((btn)=>btn.disabled=true);
+    }else{
+        result.innerHTML = `Player $ {currentPlayer} Turn`;
     }
+}
+
+function resetGame(){
+    cells = [",",",",",",","]
 }
 // Function to handle player moves
 const ticTacToe = (element, index) => {
